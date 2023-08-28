@@ -1,0 +1,27 @@
+{
+  "name": "iwadi-backend",
+  "version": "1.0.0",
+  "description": "The Node.JS backend application for the Iwadi project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chriskilelo/iwadi-backend.git"
+  },
+  "keywords": [
+    "library",
+    "backend",
+    "iwadi",
+    "backend",
+    "iwadi",
+    "node.js"
+  ],
+  "author": "Chris Kilelo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chriskilelo/iwadi-backend/issues"
+  },
+  "homepage": "https://github.com/chriskilelo/iwadi-backend#readme"
+}
