@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/chriskilelo/iwadi-backend/issues"
   },
-  "homepage": "https://github.com/chriskilelo/iwadi-backend#readme"
+  "homepage": "https://github.com/chriskilelo/iwadi-backend#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.3.1"
+  }
 }
