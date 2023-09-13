@@ -4,6 +4,7 @@
  * This controller will handle all Publisher related operations.
  */
 
+const mongooseODM = require('mongoose')
 const Publisher = require('../../models/PublisherModel')
 
 /**
@@ -29,8 +30,18 @@ const fetchAllPublishers = async (req, res) => {
  */
 const fetchPublisher = async (req, res) => {
     try {
-        // Fetch a single the publisher record
+        // Check whether the id passed in is a valid MongoDB object ID
+        if (mongooseODM.Types.ObjectId.isValid(req.params.id) === false){
+            // Means the ID is NOT valid. Compose an error message for throwing below
+            let errorMessage = 'The ID provided is not a valid MongoDB Object ID'
+            // Print the message on the console
+            console.log('\n\nThe ID provided: ' .bgRed +  req.params.id.bold.bgRed + ' is not a valid MongoDB Object ID.\n'.bgRed);
+            // Abort the transaction and thrown an error
+            throw new Error(errorMessage)
+        }
+        // Means the object ID is valid, proceed to fetch the record
         const singlePublisher = await Publisher.findById(req.params.id).exec()
+        // Append the HTTP status code and convert the response to JSON
         res.status(200).json(singlePublisher)
     } catch (error) {
         console.log(error)
