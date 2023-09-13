@@ -36,7 +36,7 @@ const fetchPublisher = async (req, res) => {
             let errorMessage = 'The ID provided is not a valid MongoDB Object ID'
             // Print the message on the console
             console.log('\n\nThe ID provided: ' .bgRed +  req.params.id.bold.bgRed + ' is not a valid MongoDB Object ID.\n'.bgRed);
-            // Abort the transaction and thrown an error
+            // Abort the transaction and throw the error with stack trace
             throw new Error(errorMessage)
         }
         // Means the object ID is valid, proceed to fetch the record
